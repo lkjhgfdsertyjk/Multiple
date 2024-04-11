@@ -73,10 +73,10 @@ else
 	cd ..
     }
 
-    #gathering_subs
-    #put_subs_together
-    #extract_ips
-    #organize
+    gathering_subs
+    put_subs_together
+    extract_ips
+    organize
 
     see_live_domains() {
     	echo "SEE LIVE DOMAINS"
@@ -100,21 +100,24 @@ else
     	echo ""
     	echo "Take screenshots "
     	echo "----------------------------------------------------"
-    	echo "%%%%%%%%%%%%%%%%%%%%"; pwd
     	cd tools/EyeWitness/Python/
     	sudo ./EyeWitness.py -f ~/Multiple/$domain/finall_site -d ~/Multiple/$domain/screenshots
     }
     recognize() {
     	echo "RECOGNIZE"
 	cd $domain
-	mkdir online
+	mkdir -p online
 	pwd
 	mv live_host lastlive_host http_site http_site online/
+ 	cd ..
+  	mkdir -p targets
+        mv $domain targets/
+
     }
     
-    #see_live_domains
-    #open_domain
-    #screenshot
+    see_live_domains
+    open_domain
+    screenshot
     recognize	
 
 fi
