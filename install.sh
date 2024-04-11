@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create subfolders
-mkdir -p tools targets
+mkdir -p tools
 
 # Install Sublist3r
 echo "Installing Sublist3r..."
